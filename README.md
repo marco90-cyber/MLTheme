@@ -65,5 +65,5 @@ Il valore delle scelte si legge e si cambia da codice con `MLThemeSettings.get(c
 
 - Da Android 8 in su. Sotto Android 12 "Dal sistema" non c'è: i colori vengono dallo sfondo del telefono.
 - Funziona anche con le app su Kotlin 1.9.
-- Per aggiornare tutte le app: modifica qui, crea un nuovo tag (es. `1.0.1`), poi cambia il numero di versione nelle app.
+- Per una nuova versione: modifica qui e cambia il numero in `version.txt` (es. `1.0.1`). GitHub Actions crea la versione e la prepara su JitPack; poi aggiorni il numero nelle app.
 - `sample/` è un'app di prova con tutti i componenti: l'APK si scarica dagli artifact di GitHub Actions.
