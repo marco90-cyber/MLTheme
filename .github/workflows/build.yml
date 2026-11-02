@@ -65,7 +65,7 @@ jobs:
           @Composable fun T() = MLTheme { MLSettingsScaffold("x", null) { MLThemeSettingsGroup(); MLGroup("y") { MLSwitchRow("a", null, true) {} } } }
           EOF
           set -o pipefail
-          ./gradlew :app:assembleDebug --no-daemon 2>&1 | tee compat.log || { grep -E "^e: |error:|What went wrong|Execution failed|incompatible|^  [a-z]|Could not|was compiled" compat.log | grep -v "> Task" | head -25 | while IFS= read -r l; do echo "::error::${l:0:900}"; done; exit 1; }
+          ./gradlew :app:assembleDebug --no-daemon 2>&1 | tee compat.log || { grep -A8 "What went wrong" compat.log | head -12 | while IFS= read -r l; do echo "::error::${l:0:900}"; done; exit 1; }
       - uses: actions/upload-artifact@v4
         with:
           name: MLTheme-demo
