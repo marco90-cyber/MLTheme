@@ -1,0 +1,5 @@
+jdk:
+  - openjdk17
+install:
+  - chmod +x gradlew
+  - JITPACK=true VERSION=$VERSION ./gradlew :mltheme:publishReleasePublicationToMavenLocal --no-daemon
